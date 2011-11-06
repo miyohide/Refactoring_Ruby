@@ -69,5 +69,22 @@ class CustomerTest < Test::Unit::TestCase
                    c.statement)
    end
 
+   def test_html_statement
+      c = Customer.new("regular")
+      m = Movie.new("regular-1", Movie::REGULAR)
+      c.add_rental(Rental.new(m,3))
+
+      m = Movie.new("new_release-1", Movie::NEW_RELEASE)
+      c.add_rental(Rental.new(m,1))
+
+      except_str = "<h1>Rentals for <em>regular</em></h1><p>\n" +
+         "\tregular-1: 3.5<br>\n" +
+         "\tnew_release-1: 3<br>\n" +
+         "<p>You owe <em>6.5</em><p>\n" +
+         "On this rental you earned <em>2</em> " +
+         "frequent renter points<p>"
+      assert_equal(except_str, c.html_statement)
+   end
+
 end
 
