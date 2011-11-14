@@ -1,5 +1,8 @@
 require './lib/Movie'
 require './lib/Rental'
+require './lib/ChildrensPrice'
+require './lib/NewReleasePrice'
+require './lib/RegularPrice'
 
 class Customer
    attr_reader :name
