@@ -15,7 +15,7 @@ class Customer
       result = "Rental Record for #{@name}\n"
 
       @rentals.each do |element|
-         this_amount = amount_for(element)
+         this_amount = element.charge
 
          # レンタルポイントを加算
          frequent_renter_points += 1
