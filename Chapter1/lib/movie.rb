@@ -25,5 +25,10 @@ class Movie
       end
       result
    end
+
+   def frequent_renter_points(days_rented)
+      # 新作2日間レンタルでボーナス点を加算
+      (price_code == NEW_RELEASE && days_rented > 1) ? 2 : 1
+   end
 end
 
