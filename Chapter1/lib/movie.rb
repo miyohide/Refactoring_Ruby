@@ -31,8 +31,7 @@ class Movie
       # 各行の金額を計算
       case price_code
       when REGULAR
-         result += 2
-         result += (days_rented - 2) * 1.5 if days_rented > 2
+         return @price.charge(days_rented)
       when NEW_RELEASE
          result += days_rented * 3
       when CHILDRENS
