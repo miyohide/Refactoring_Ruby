@@ -9,17 +9,10 @@ class Movie
 
    attr_reader :title
    attr_reader :price_code
+   attr_writer :price
 
    def price_code=(value)
       @price_code = value
-      @price = case price_code
-               when REGULAR
-                  RegularPrice.new
-               when NEW_RELEASE
-                  NewReleasePrice.new
-               when CHILDRENS
-                  ChildrensPrice.new
-               end
    end
 
    def initialize(title, the_price_code)
