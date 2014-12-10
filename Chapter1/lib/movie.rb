@@ -17,6 +17,7 @@ class Movie
 
    def initialize(title, the_price_code)
       @title, self.price_code = title, the_price_code
+      self.price = the_price_code
    end
 
    def charge(days_rented)

@@ -5,7 +5,7 @@ describe Customer do
       describe 'REGULAR movie' do
          describe 'Rented days is 2' do
             before do
-               regular_movie = Movie.new('regular movie', Movie::REGULAR)
+               regular_movie = Movie.new('regular movie', RegularPrice.new)
                @customer = Customer.new('Customer name')
                @customer.add_rental(Rental.new(regular_movie, 2))
             end
@@ -16,7 +16,7 @@ describe Customer do
 
          describe 'Rented days is 3' do
             before do
-               regular_movie = Movie.new('regular movie', Movie::REGULAR)
+               regular_movie = Movie.new('regular movie', RegularPrice.new)
                @customer = Customer.new('Customer name')
                @customer.add_rental(Rental.new(regular_movie, 3))
             end
@@ -27,7 +27,7 @@ describe Customer do
 
       describe 'NEW RELEASE movie' do
          before do
-            new_release_movie = Movie.new('new release movie', Movie::NEW_RELEASE)
+            new_release_movie = Movie.new('new release movie', NewReleasePrice.new)
             @customer = Customer.new('Customer name')
             @customer.add_rental(Rental.new(new_release_movie, 2))
          end
@@ -39,7 +39,7 @@ describe Customer do
       describe 'CHILDRENS movie' do
          describe 'Rented days is 3' do
             before do
-               children_movie = Movie.new('children movie', Movie::CHILDRENS)
+               children_movie = Movie.new('children movie', ChildrensPrice.new)
                @customer = Customer.new('Customer name')
                @customer.add_rental(Rental.new(children_movie, 3))
             end
@@ -50,7 +50,7 @@ describe Customer do
 
          describe 'Rented days is 4' do
             before do
-               children_movie = Movie.new('children movie', Movie::CHILDRENS)
+               children_movie = Movie.new('children movie', ChildrensPrice.new)
                @customer = Customer.new('Customer name')
                @customer.add_rental(Rental.new(children_movie, 4))
             end
@@ -61,9 +61,9 @@ describe Customer do
 
       describe 'ALL movie type' do
          before do
-            regular_movie = Movie.new('regular movie', Movie::REGULAR)
-            new_release_movie = Movie.new('new release movie', Movie::NEW_RELEASE)
-            children_movie = Movie.new('children movie', Movie::CHILDRENS)
+            regular_movie = Movie.new('regular movie', RegularPrice.new)
+            new_release_movie = Movie.new('new release movie', NewReleasePrice.new)
+            children_movie = Movie.new('children movie', ChildrensPrice.new)
             @customer = Customer.new('Customer name')
             @customer.add_rental(Rental.new(regular_movie, 4))
             @customer.add_rental(Rental.new(new_release_movie, 4))
@@ -78,7 +78,7 @@ describe Customer do
       describe 'REGULAR movie' do
          describe 'Rented days is 2' do
             before do
-               regular_movie = Movie.new('regular movie', Movie::REGULAR)
+               regular_movie = Movie.new('regular movie', RegularPrice.new)
                @customer = Customer.new('Customer name')
                @customer.add_rental(Rental.new(regular_movie, 2))
             end
@@ -89,7 +89,7 @@ describe Customer do
 
          describe 'Rented days is 3' do
             before do
-               regular_movie = Movie.new('regular movie', Movie::REGULAR)
+               regular_movie = Movie.new('regular movie', RegularPrice.new)
                @customer = Customer.new('Customer name')
                @customer.add_rental(Rental.new(regular_movie, 3))
             end
@@ -100,7 +100,7 @@ describe Customer do
 
       describe 'NEW RELEASE movie' do
          before do
-            new_release_movie = Movie.new('new release movie', Movie::NEW_RELEASE)
+            new_release_movie = Movie.new('new release movie', NewReleasePrice.new)
             @customer = Customer.new('Customer name')
             @customer.add_rental(Rental.new(new_release_movie, 2))
          end
@@ -112,7 +112,7 @@ describe Customer do
       describe 'CHILDRENS movie' do
          describe 'Rented days is 3' do
             before do
-               children_movie = Movie.new('children movie', Movie::CHILDRENS)
+               children_movie = Movie.new('children movie', ChildrensPrice.new)
                @customer = Customer.new('Customer name')
                @customer.add_rental(Rental.new(children_movie, 3))
             end
@@ -123,7 +123,7 @@ describe Customer do
 
          describe 'Rented days is 4' do
             before do
-               children_movie = Movie.new('children movie', Movie::CHILDRENS)
+               children_movie = Movie.new('children movie', ChildrensPrice.new)
                @customer = Customer.new('Customer name')
                @customer.add_rental(Rental.new(children_movie, 4))
             end
@@ -134,9 +134,9 @@ describe Customer do
 
       describe 'ALL movie type' do
          before do
-            regular_movie = Movie.new('regular movie', Movie::REGULAR)
-            new_release_movie = Movie.new('new release movie', Movie::NEW_RELEASE)
-            children_movie = Movie.new('children movie', Movie::CHILDRENS)
+            regular_movie = Movie.new('regular movie', RegularPrice.new)
+            new_release_movie = Movie.new('new release movie', NewReleasePrice.new)
+            children_movie = Movie.new('children movie', ChildrensPrice.new)
             @customer = Customer.new('Customer name')
             @customer.add_rental(Rental.new(regular_movie, 4))
             @customer.add_rental(Rental.new(new_release_movie, 4))
